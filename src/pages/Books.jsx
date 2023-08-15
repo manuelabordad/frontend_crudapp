@@ -28,13 +28,14 @@ const Books = () => {
         }
     }
 
+    console.log("books",books);
 
   return (
     <div> 
         <h1 className='titles'>Library</h1>
     
         <div className='books'>
-            {books && books.map(book=>(
+            {books && books.length > 0 &&  books.map(book=>(
                 <div className='book card' key={book.id}>
                         {<img src={`http://localhost:8800/images/${book.cover}`} className='card-img-top' alt=''/>}
                         <div className="card-body">
