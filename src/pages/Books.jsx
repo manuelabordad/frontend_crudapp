@@ -8,7 +8,7 @@ const Books = () => {
     useEffect(()=>{
         const fetchAllBooks = async ()=>{
             try{
-                const res = await axios.get("https://floating-everglades-33971-e511527c9b7f.herokuapp.com/")
+                const res = await axios.get("https://floating-everglades-33971-e511527c9b7f.herokuapp.com")
                 setBooks(res.data)
 
                 console.log(res)
