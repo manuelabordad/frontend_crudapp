@@ -34,7 +34,7 @@ const Add = () => {
       formData.append('cover', bookinfo.cover);
   
       try {
-        await axios.post('https://floating-everglades-33971-e511527c9b7f.herokuapp.com', formData, {
+        await axios.post('https://floating-everglades-33971-e511527c9b7f.herokuapp.com/books', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

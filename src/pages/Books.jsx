@@ -8,7 +8,7 @@ const Books = () => {
     useEffect(()=>{
         const fetchAllBooks = async ()=>{
             try{
-                const res = await axios.get("https://floating-everglades-33971-e511527c9b7f.herokuapp.com")
+                const res = await axios.get("https://floating-everglades-33971-e511527c9b7f.herokuapp.com/books")
                 setBooks(res.data)
 
                 console.log(res)
@@ -21,23 +21,22 @@ const Books = () => {
 
     const handleDelete = async(id)=>{
         try{
-            await axios.delete("https://floating-everglades-33971-e511527c9b7f.herokuapp.com/"+id);
+            await axios.delete("https://floating-everglades-33971-e511527c9b7f.herokuapp.com/books/"+id);
             window.location.reload()
         }catch(err){
             console.log(err)
         }
     }
 
-    console.log("books",books);
 
   return (
     <div> 
         <h1 className='titles'>Library</h1>
     
         <div className='books'>
-            {books && books.length > 0 &&  books.map(book=>(
+            {books.map(book=>(
                 <div className='book card' key={book.id}>
-                        {<img src={`http://localhost:8800/images/${book.cover}`} className='card-img-top' alt=''/>}
+                        {<img src={`https://floating-everglades-33971-e511527c9b7f.herokuapp.com/images/${book.cover}`} className='card-img-top' alt=''/>}
                         <div className="card-body">
                         <p className='card-title'>{book.title}</p>
                         <p className='card-text'>{book.desc}</p>
